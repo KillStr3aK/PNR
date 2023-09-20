@@ -8,11 +8,11 @@ const sceneConfig: Phaser.Types.Scenes.SettingsConfig = {
 };
 
 export class MainMenuScene extends Phaser.Scene {
-	constructor() {
-		super(sceneConfig)
-	}
+    constructor() {
+        super(sceneConfig)
+    }
 
-	public create = (): void => {
+    public create = (): void => {
         this.add.text(100, 50, 'MAIN MENU', {
             color: '#FFFFFF',
         }).setFontSize(24);
@@ -22,5 +22,5 @@ export class MainMenuScene extends Phaser.Scene {
         });
 
         new Button(this, 100, 250, 'Settings', () => console.log('SETTINGS CLICKED'));
-	}
+    }
 }

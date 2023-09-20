@@ -23,12 +23,10 @@ export class InstanceList<T extends IInstance> implements IInstanceList<T> {
     public Filter(predicate: FilterPredicate<T>): T[] {
         let instances: T[] = [];
 
-        for (const key in this)
-        {
+        for (const key in this) {
             let instance: T = this[key];
 
-            if (instance && predicate(instance))
-            {
+            if (instance && predicate(instance)) {
                 instances.push(instance);
             }
         }

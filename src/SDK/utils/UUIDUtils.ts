@@ -1,5 +1,4 @@
-export namespace UUIDUtils
-{
+export namespace UUIDUtils {
     export function Generate() {
         return 'xxxxxxxx-xxxx-xxxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
             const r = Math.random() * 0x10 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);

@@ -6,8 +6,7 @@ import { IComponentConstructor } from "./IComponentConstructor";
 export abstract class Componentable implements IComponentable {
     public Components: IComponent[];
 
-    constructor()
-    {
+    constructor() {
         this.Components = [];
     }
 

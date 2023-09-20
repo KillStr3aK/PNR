@@ -1,4 +1,3 @@
-export enum EntityType
-{
+export enum EntityType {
     WORLD = "world"
 }

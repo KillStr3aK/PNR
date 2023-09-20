@@ -7,19 +7,19 @@ const sceneConfig: Phaser.Types.Scenes.SettingsConfig = {
 };
 
 export class TemplateScene extends Phaser.Scene {
-	constructor() {
-		super(sceneConfig)
-	}
+    constructor() {
+        super(sceneConfig)
+    }
 
     public init = (): void => {
 
     }
 
-	public preload = (): void => {
+    public preload = (): void => {
 
-	}
+    }
 
-	public create = (): void => {
+    public create = (): void => {
 
-	}
+    }
 }
