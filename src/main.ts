@@ -4,21 +4,21 @@ import { Game } from './models/Game';
 
 const config: Phaser.Types.Core.GameConfig = {
     title: "PNR",
-	type: Phaser.AUTO,
+    type: Phaser.AUTO,
 
-	parent: 'app',
+    parent: 'app',
 
-	width: window.innerWidth,
-	height: window.innerHeight,
+    width: window.innerWidth,
+    height: window.innerHeight,
 
-	physics: {
-		default: 'arcade',
-		arcade: {
-			gravity: { y: 200 },
-		},
-	},
+    physics: {
+        default: 'arcade',
+        arcade: {
+            gravity: { y: 200 },
+        },
+    },
 
-	scene: Scenes,
+    scene: Scenes,
 };
 
 export default new Game(config);
