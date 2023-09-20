@@ -4,7 +4,7 @@ export class ImageComponent implements IComponent {
     public Image: Phaser.GameObjects.Image;
 
     constructor(parent: Entity, data: ComponentData) {
-        this.Image = parent.scene.add.image(data.X, data.Y, data.Texture, data.Frame);
+        this.Image = parent.scene.add.image(data.X, data.Y, data.Texture);
         this.Image.y -= this.Image.height * this.Image.originY;
 
         if (data.Scale) {
