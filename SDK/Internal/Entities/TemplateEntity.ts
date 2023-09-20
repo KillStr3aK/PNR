@@ -4,6 +4,6 @@ import { BaseScene } from "@SDK/Internal";
 
 export class TemplateEntity extends Entity {
     constructor(scene: BaseScene) {
-        super(scene, EntityType.TEMPLATE);
+        super(scene, EntityType.DUMMY);
     }
 }
