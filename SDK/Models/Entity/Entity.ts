@@ -65,7 +65,7 @@ export abstract class Entity extends Phaser.GameObjects.GameObject implements II
             return component as InstanceType<T>;
         }
 
-        throw new Error(`COMPONENTABLE::NO_COMPONENT_${typeof componentType}`);
+        throw new Error(`ENTITY::NO_COMPONENT_${typeof componentType}`);
     }
 
     public HasComponent<T extends IComponentConstructor>(componentType: T): boolean {
