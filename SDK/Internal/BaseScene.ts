@@ -1,6 +1,6 @@
-import { Entity, EntityList, PrefabHandler, PrefabComponent, Prefab, InstanceList, IComponentConstructor, ComponentData } from "@SDK/Models";
+import { Entity, EntityList, IEntityHandler, PrefabHandler, PrefabComponent, Prefab, InstanceList, IComponentConstructor, ComponentData } from "@SDK/Models";
 
-export abstract class BaseScene extends Phaser.Scene
+export abstract class BaseScene extends Phaser.Scene implements IEntityHandler
 {
     private Entities: EntityList = new InstanceList<Entity>();
 
