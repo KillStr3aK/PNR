@@ -15,5 +15,6 @@ jobs:
           node-version: "16.17.1"
       - run: npm ci
       - run: npm install
+      - run: tsc --showConfig
       - run: tsc -p tsconfig.json
       - run: npm run build --if-present
