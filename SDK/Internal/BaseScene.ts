@@ -1,6 +1,6 @@
 import { Entity, EntityList, PrefabHandler, PrefabComponent, Prefab, InstanceList, IComponentConstructor, ComponentData } from "@SDK/Models";
 
-export class BaseScene extends Phaser.Scene
+export abstract class BaseScene extends Phaser.Scene
 {
     private Entities: EntityList = new InstanceList<Entity>();
 
