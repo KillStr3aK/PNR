@@ -1,4 +1,5 @@
 import Phaser from 'phaser';
+import { BaseScene } from '../SDK';
 
 const sceneConfig: Phaser.Types.Scenes.SettingsConfig = {
     active: false,
@@ -6,7 +7,7 @@ const sceneConfig: Phaser.Types.Scenes.SettingsConfig = {
     key: 'Template',
 };
 
-export class TemplateScene extends Phaser.Scene {
+export class TemplateScene extends BaseScene {
     constructor() {
         super(sceneConfig)
     }

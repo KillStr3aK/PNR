@@ -1,5 +1,5 @@
 import Phaser from 'phaser';
-import { Button } from '../SDK';
+import { Button, BaseScene } from '../SDK';
 
 const sceneConfig: Phaser.Types.Scenes.SettingsConfig = {
     active: false,
@@ -7,7 +7,7 @@ const sceneConfig: Phaser.Types.Scenes.SettingsConfig = {
     key: 'MainMenu',
 };
 
-export class MainMenuScene extends Phaser.Scene {
+export class MainMenuScene extends BaseScene {
     constructor() {
         super(sceneConfig)
     }

@@ -1,5 +1,5 @@
 import Phaser from 'phaser';
-import { Entity, EntityManager, WorldEntity, WorldPrefab } from '../SDK';
+import { Entity, EntityManager, WorldEntity, WorldPrefab, BaseScene } from '../SDK';
 
 const sceneConfig: Phaser.Types.Scenes.SettingsConfig = {
     active: false,
@@ -7,7 +7,7 @@ const sceneConfig: Phaser.Types.Scenes.SettingsConfig = {
     key: 'Game',
 };
 
-export class GameScene extends Phaser.Scene {
+export class GameScene extends BaseScene {
     constructor() {
         super(sceneConfig)
     }

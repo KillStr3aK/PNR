@@ -1,4 +1,5 @@
 import Phaser from 'phaser';
+import { BaseScene } from '../SDK';
 
 const sceneConfig: Phaser.Types.Scenes.SettingsConfig = {
     active: false,
@@ -10,7 +11,7 @@ const sceneConfig: Phaser.Types.Scenes.SettingsConfig = {
 const assets: Map<string, string> = new Map();
 assets.set("garfield", "images/9fb5a15e7f8f744375fb7bcd3a2cddaa.jpg");
 
-export class BootScene extends Phaser.Scene {
+export class BootScene extends BaseScene {
     constructor() {
         super(sceneConfig)
     }
