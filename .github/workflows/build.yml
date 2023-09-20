@@ -8,6 +8,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - run: git config core.ignorecase false
       - uses: actions/checkout@v4
       - name: Use Node.js
         uses: actions/setup-node@v3
