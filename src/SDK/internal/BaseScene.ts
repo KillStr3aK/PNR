@@ -12,4 +12,8 @@ export class BaseScene extends Phaser.Scene
     public GetHeight(): number {
         return this.game.scale.height;
     };
+
+    public GetName(): string {
+        return this.scene.key;
+    };
 }
