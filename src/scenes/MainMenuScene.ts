@@ -5,7 +5,7 @@ import { Button } from "@SDK/UI";
 const sceneConfig: Phaser.Types.Scenes.SettingsConfig = {
     active: false,
     visible: false,
-    key: 'MainMenu',
+    key: "MainMenu",
 };
 
 export class MainMenuScene extends BaseScene {
@@ -14,14 +14,14 @@ export class MainMenuScene extends BaseScene {
     }
 
     public create = (): void => {
-        this.add.text(100, 50, 'MAIN MENU', {
-            color: '#FFFFFF',
+        this.add.text(100, 50, "MAIN MENU", {
+            color: "#FFFFFF",
         }).setFontSize(24);
 
-        new Button(this, 100, 150, 'START', () => {
-            this.scene.start('Game');
+        new Button(this, 100, 150, "START", () => {
+            this.scene.start("Game");
         });
 
-        new Button(this, 100, 250, 'Settings', () => console.log('SETTINGS CLICKED'));
+        new Button(this, 100, 250, "Settings", () => console.log("SETTINGS CLICKED"));
     }
 }

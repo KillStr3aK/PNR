@@ -1,5 +1,5 @@
-import * as Phaser from 'phaser';
-import { IComponent } from '../Models';
+import * as Phaser from "phaser";
+import { IComponent } from "../Models";
 
 const padding = 10;
 const minimumWidth = 200;
@@ -16,7 +16,7 @@ export class Button extends Phaser.GameObjects.Rectangle implements IComponent {
         this.Label = scene.add
             .text(x + padding, y + padding, text)
             .setFontSize(18)
-            .setAlign('center');
+            .setAlign("center");
 
         const labelWidth = this.Label.width + padding;
         const labelHeight = this.Label.height + padding;
@@ -25,30 +25,30 @@ export class Button extends Phaser.GameObjects.Rectangle implements IComponent {
         this.height = labelHeight >= minimumHeight ? labelHeight : minimumHeight;
 
         this.setInteractive({ useHandCursor: true })
-            .on('pointerover', this.enterMenuButtonHoverState)
-            .on('pointerout', this.enterMenuButtonRestState)
-            .on('pointerdown', this.enterMenuButtonActiveState)
-            .on('pointerup', this.enterMenuButtonHoverState);
+            .on("pointerover", this.enterMenuButtonHoverState)
+            .on("pointerout", this.enterMenuButtonRestState)
+            .on("pointerdown", this.enterMenuButtonActiveState)
+            .on("pointerup", this.enterMenuButtonHoverState);
 
         if (onClick) {
-            this.on('pointerup', onClick);
+            this.on("pointerup", onClick);
         }
 
         this.enterMenuButtonRestState();
     }
 
     private enterMenuButtonHoverState() {
-        this.Label.setColor('#000000');
+        this.Label.setColor("#000000");
         this.setFillStyle(0x888888);
     }
 
     private enterMenuButtonRestState() {
-        this.Label.setColor('#FFFFFF');
+        this.Label.setColor("#FFFFFF");
         this.setFillStyle(0x888888);
     }
 
     private enterMenuButtonActiveState() {
-        this.Label.setColor('#BBBBBB');
+        this.Label.setColor("#BBBBBB");
         this.setFillStyle(0x444444);
     }
 

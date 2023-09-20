@@ -1,18 +1,18 @@
-import Phaser from 'phaser';
-import Scenes from './Scenes';
-import { Game } from './Models/Game';
+import Phaser from "phaser";
+import Scenes from "./Scenes";
+import { Game } from "./Models/Game";
 
 const config: Phaser.Types.Core.GameConfig = {
     title: "PNR",
     type: Phaser.AUTO,
 
-    parent: 'app',
+    parent: "app",
 
     width: window.innerWidth,
     height: window.innerHeight,
 
     physics: {
-        default: 'arcade',
+        default: "arcade",
         arcade: {
             gravity: { y: 200 },
         },

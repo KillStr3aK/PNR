@@ -1,4 +1,4 @@
-import Phaser from 'phaser';
+import Phaser from "phaser";
 
 export interface IBaseGame {
     EventHandler: Phaser.Events.EventEmitter;
@@ -10,7 +10,7 @@ export abstract class BaseGame extends Phaser.Game implements IBaseGame {
     constructor(config: Phaser.Types.Core.GameConfig) {
         super(config);
 
-        window.addEventListener('resize', () => {
+        window.addEventListener("resize", () => {
             this.TriggerEvent("OnWindowResized");
         });
 

@@ -4,7 +4,7 @@ import { BaseScene } from "@SDK/Internal";
 const sceneConfig: Phaser.Types.Scenes.SettingsConfig = {
     active: false,
     visible: false,
-    key: 'Boot',
+    key: "Boot",
 };
 
 // TODO: ez nem ilyen lesz csak most nem ezzel foglalkozok
@@ -29,9 +29,9 @@ export class BootScene extends BaseScene {
         const loadingText = this.make.text({
             x: width / 2,
             y: height / 2 - 50,
-            text: 'Loading...',
+            text: "Loading...",
             style: {
-                font: '20px monospace'
+                font: "20px monospace"
             }
         });
 
@@ -40,9 +40,9 @@ export class BootScene extends BaseScene {
         const percentText = this.make.text({
             x: width / 2,
             y: height / 2 - 5,
-            text: '0%',
+            text: "0%",
             style: {
-                font: '18px monospace',
+                font: "18px monospace",
             }
         });
 
@@ -51,26 +51,26 @@ export class BootScene extends BaseScene {
         const assetText = this.make.text({
             x: width / 2,
             y: height / 2 + 50,
-            text: '',
+            text: "",
             style: {
-                font: '18px monospace',
+                font: "18px monospace",
             }
         });
 
         assetText.setOrigin(0.5, -0.5);
 
-        this.load.on('progress', (value: number) => {
-            percentText.setText((value * 100).toFixed(2) + '%');
+        this.load.on("progress", (value: number) => {
+            percentText.setText((value * 100).toFixed(2) + "%");
             progressBar.clear();
             progressBar.fillStyle(0xffffff, 1);
             progressBar.fillRect(width / 2 - 150, height / 2 + 10, 300 * value, 30);
         });
 
-        this.load.on('fileprogress', (file: any) => {
-            assetText.setText('Loading asset: ' + file.key);
+        this.load.on("fileprogress", (file: any) => {
+            assetText.setText("Loading asset: " + file.key);
         });
 
-        this.load.on('complete', () => {
+        this.load.on("complete", () => {
             // TODO: ez sem ilyen lesz csak most mással foglalkozom
             setTimeout(() => {
                 progressBar.destroy();
@@ -79,7 +79,7 @@ export class BootScene extends BaseScene {
                 percentText.destroy();
                 assetText.destroy();
 
-                this.scene.start('MainMenu');
+                this.scene.start("MainMenu");
             }, 1500);
         });
 

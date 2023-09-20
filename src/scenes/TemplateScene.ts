@@ -4,7 +4,7 @@ import { BaseScene } from "@SDK/Internal";
 const sceneConfig: Phaser.Types.Scenes.SettingsConfig = {
     active: false,
     visible: false,
-    key: 'Template',
+    key: "Template",
 };
 
 export class TemplateScene extends BaseScene {

@@ -5,7 +5,7 @@ import { WorldEntity, WorldPrefab, BaseScene } from "@SDK/Internal";
 const sceneConfig: Phaser.Types.Scenes.SettingsConfig = {
     active: false,
     visible: false,
-    key: 'Game',
+    key: "Game",
 };
 
 export class GameScene extends BaseScene {
@@ -24,8 +24,8 @@ export class GameScene extends BaseScene {
     }
 
     public create = (): void => {
-        this.add.text(100, 50, 'GAME SCENE', {
-            color: '#FFFFFF',
+        this.add.text(100, 50, "GAME SCENE", {
+            color: "#FFFFFF",
         }).setFontSize(24);
     }
 }

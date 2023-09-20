@@ -19,6 +19,7 @@
 
     "baseUrl": "src",
     "paths": {
+        "@Scenes/*": ["./Scenes/*"],
         "@SDK/*": ["../SDK/*"]
     }
   },
