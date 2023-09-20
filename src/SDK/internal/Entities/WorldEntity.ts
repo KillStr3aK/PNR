@@ -5,4 +5,10 @@ export class WorldEntity extends Entity {
     constructor() {
         super(EntityType.WORLD);
     }
+
+    public override Destroy(): void {
+        super.Destroy();
+
+        // ...
+    }
 }

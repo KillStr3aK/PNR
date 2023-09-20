@@ -19,4 +19,8 @@ export abstract class Entity extends Instance {
     public GetType = (): string => {
         return this.Type;
     }
+
+    public override Destroy(): void {
+        super.Destroy();
+    }
 }
