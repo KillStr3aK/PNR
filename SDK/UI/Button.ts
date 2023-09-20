@@ -1,5 +1,5 @@
 import * as Phaser from 'phaser';
-import { IComponent } from '../models';
+import { IComponent } from '../Models';
 
 const padding = 10;
 const minimumWidth = 200;

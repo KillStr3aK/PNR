@@ -1,4 +1,4 @@
-import { ComponentData, IComponent, IComponentable } from "../../models";
+import { ComponentData, IComponent, IComponentable } from "../../Models";
 
 export class SpriteComponent implements IComponent {
     public Sprite?: Phaser.GameObjects.Sprite;
