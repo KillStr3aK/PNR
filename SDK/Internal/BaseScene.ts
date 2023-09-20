@@ -2,7 +2,7 @@ import { Entity, EntityList, IEntityHandler, PrefabHandler, PrefabComponent, Pre
 
 export abstract class BaseScene extends Phaser.Scene implements IEntityHandler
 {
-    private Entities: EntityList = new InstanceList<Entity>();
+    public Entities: EntityList = new InstanceList<Entity>();
 
     constructor(config: Phaser.Types.Scenes.SettingsConfig)
     {
