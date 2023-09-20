@@ -1,5 +1,4 @@
-import { ComponentData, IComponent } from "../../models";
-import { IComponentable } from "../../models";
+import { ComponentData, IComponent, IComponentable } from "../../models";
 
 export class PhysicsBodyComponent implements IComponent {
     public Body?: Phaser.Physics.Arcade.Body;
