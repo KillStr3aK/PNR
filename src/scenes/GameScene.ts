@@ -1,6 +1,5 @@
 import Phaser from 'phaser';
-import { Entity } from '../SDK';
-import { EntityManager } from '../SDK';
+import { Entity, EntityManager } from '../SDK';
 import { WorldEntity } from '../SDK/internal/Entities/WorldEntity';
 import { WorldPrefab } from '../SDK/internal/Prefabs/WorldPrefab';
 
