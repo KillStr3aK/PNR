@@ -1,4 +1,4 @@
-import { Entity, EntityList, PrefabHandler, PrefabComponent, Prefab, InstanceList, IInstance, IComponentable, IComponent, IComponentConstructor, ComponentData } from "@SDK/Models";
+import { Entity, EntityList, PrefabHandler, PrefabComponent, Prefab, InstanceList, IComponentConstructor, ComponentData } from "@SDK/Models";
 
 export class BaseScene extends Phaser.Scene
 {
