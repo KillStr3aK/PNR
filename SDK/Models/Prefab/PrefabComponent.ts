@@ -1,4 +1,4 @@
-import { IComponentConstructor } from "../Component";
+import { IComponentConstructor } from "@SDK/Models";
 
 export type PrefabComponent = {
     Component: IComponentConstructor;

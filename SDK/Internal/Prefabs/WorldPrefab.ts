@@ -1,5 +1,5 @@
-import { Prefab } from "../../Models";
-import { EmptyComponent } from "../Components/EmptyComponent";
+import { Prefab } from "@SDK/Models";
+import { EmptyComponent } from "@SDK/Internal";
 
 export const WorldPrefab: Prefab = {
     Components: [

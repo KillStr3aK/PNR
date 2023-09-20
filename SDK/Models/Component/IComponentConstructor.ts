@@ -1,6 +1,4 @@
-import { IComponent } from "./IComponent";
-import { ComponentData } from "./ComponentData";
-import { IComponentable } from "./IComponentable";
+import { ComponentData, IComponent, IComponentable } from "@SDK/Models";
 
 export interface IComponentConstructor {
     new(parent: IComponentable, ...args: ComponentData[]): IComponent;

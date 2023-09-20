@@ -1,9 +1,10 @@
-import { Entity } from "../../Models";
-import { EntityType } from "../../Enums";
+import { Entity } from "@SDK/Models";
+import { EntityType } from "@SDK/Enums";
+import { BaseScene } from "@SDK/Internal";
 
 export class WorldEntity extends Entity {
-    constructor() {
-        super(EntityType.WORLD);
+    constructor(scene: BaseScene) {
+        super(scene, EntityType.WORLD);
     }
 
     public override Destroy(): void {

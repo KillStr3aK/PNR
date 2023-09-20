@@ -1,8 +1,4 @@
-import { Entity } from "./Entity";
-import { InstanceList } from "../Instance";
-import { Prefab, PrefabComponent } from "../Prefab";
-import { ComponentData, IComponentConstructor } from "../Component";
-import { PrefabHandler } from "../Prefab/PrefabHandler";
+import { Entity, InstanceList, Prefab, PrefabComponent, PrefabHandler, ComponentData, IComponentConstructor } from "@SDK/Models";
 
 export type EntityList = InstanceList<Entity>;
 

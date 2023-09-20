@@ -1,5 +1,4 @@
-import { IInstance } from "./IInstance";
-import { IInstanceList, FilterPredicate } from "./IInstanceList";
+import { IInstance, IInstanceList, FilterPredicate } from "@SDK/Models";
 
 export class InstanceList<T extends IInstance> implements IInstanceList<T> {
     [key: number]: T;

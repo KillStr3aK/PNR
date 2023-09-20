@@ -1,5 +1,4 @@
-import { Componentable } from "../Component";
-import { IInstance } from "./IInstance";
+import { Componentable, IInstance } from "@SDK/Models";
 
 export abstract class Instance extends Componentable implements IInstance {
     static Instances: number = 0;

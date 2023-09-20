@@ -1,4 +1,4 @@
-import { ComponentData, IComponent, IComponentable } from "../../Models";
+import { ComponentData, IComponent, IComponentable } from "@SDK/Models";
 
 export class EmptyComponent implements IComponent {
     constructor(parent: IComponentable, data?: ComponentData) {

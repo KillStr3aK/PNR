@@ -1,4 +1,4 @@
-import { IInstance } from "./IInstance";
+import { IInstance } from "@SDK/Models";
 
 export type FilterPredicate<T extends IInstance> = (instance: T) => boolean;
 

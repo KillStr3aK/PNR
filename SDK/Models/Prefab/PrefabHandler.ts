@@ -1,5 +1,4 @@
-import { Prefab } from "./Prefab";
-import { PrefabComponent } from "./PrefabComponent";
+import { Prefab, PrefabComponent } from "@SDK/Models";
 
 export abstract class PrefabHandler {
     static GetComponentDefinitions(prefab: Prefab): PrefabComponent[] {

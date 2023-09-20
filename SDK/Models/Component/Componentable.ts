@@ -1,7 +1,4 @@
-import { ComponentData } from "./ComponentData";
-import { IComponent } from "./IComponent";
-import { IComponentable } from "./IComponentable";
-import { IComponentConstructor } from "./IComponentConstructor";
+import { ComponentData, IComponent, IComponentable, IComponentConstructor } from "@SDK/Models";
 
 export abstract class Componentable implements IComponentable {
     public Components: IComponent[];
