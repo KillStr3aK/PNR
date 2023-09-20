@@ -4,4 +4,12 @@ export class BaseScene extends Phaser.Scene
     {
         super(config);
     }
+
+    public GetWidth(): number {
+        return this.game.scale.width;
+    };
+
+    public GetHeight(): number {
+        return this.game.scale.height;
+    };
 }
