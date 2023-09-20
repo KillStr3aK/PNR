@@ -1,11 +1,10 @@
-import { IComponent } from "../../models";
+import { ComponentData, IComponent } from "../../models";
+import { IComponentable } from "../../models";
 
-export class PhysicsBodyComponent implements IComponent
-{
+export class PhysicsBodyComponent implements IComponent {
     public Body?: Phaser.Physics.Arcade.Body;
 
-    constructor()
-    {
+    constructor(parent: IComponentable, data?: ComponentData) {
     }
 
     Destroy(): void {

@@ -1,11 +1,10 @@
-import { IComponent } from "../../models";
+import { ComponentData, IComponent } from "../../models";
+import { IComponentable } from "../../models";
 
-export class SpriteComponent implements IComponent
-{
+export class SpriteComponent implements IComponent {
     public Sprite?: Phaser.GameObjects.Sprite;
 
-    constructor()
-    {
+    constructor(parent: IComponentable, data?: ComponentData) {
     }
 
     Destroy(): void {
