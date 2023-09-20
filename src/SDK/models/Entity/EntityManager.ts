@@ -25,7 +25,11 @@ export abstract class EntityManager {
         return entity;
     }
 
-    static DeleteEntity(instanceId: number): void {
+    static DeleteEntity(entity: Entity): void {
+        EntityManager.DeleteEntityById(entity.GetInstance());
+    }
+
+    static DeleteEntityById(instanceId: number): void {
         if (EntityManager.Entities.Contains(instanceId)) {
             let entity: Entity = EntityManager.Entities.Get(instanceId);
             entity.Destroy();
