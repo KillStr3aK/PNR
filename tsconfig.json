@@ -15,7 +15,12 @@
     "noUnusedParameters": false,
     "noImplicitReturns": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": false
+    "forceConsistentCasingInFileNames": false,
+
+    "baseUrl": "src",
+    "paths": {
+        "@SDK/*": ["../SDK/*"]
+    }
   },
   "include": ["src", "SDK"]
 }
