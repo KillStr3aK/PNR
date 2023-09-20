@@ -1,6 +1,8 @@
 import { UUIDUtils } from "@SDK/Utils";
 import { BaseScene } from "@SDK/Internal";
-import { IInstance, IComponentable, IComponent, IComponentConstructor, ComponentData } from "@SDK/Models";
+import { InstanceList, IInstance, IComponentable, IComponent, IComponentConstructor, ComponentData } from "@SDK/Models";
+
+export type EntityList = InstanceList<Entity>;
 
 export abstract class Entity extends Phaser.GameObjects.GameObject implements IInstance, IComponentable {
     static Instances: number = 0;
