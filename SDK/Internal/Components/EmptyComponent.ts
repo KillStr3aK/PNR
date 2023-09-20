@@ -1,7 +1,7 @@
-import { ComponentData, IComponent, IComponentable } from "@SDK/Models";
+import { Entity, ComponentData, IComponent } from "@SDK/Models";
 
 export class EmptyComponent implements IComponent {
-    constructor(parent: IComponentable, data?: ComponentData) {
+    constructor(parent: Entity, data?: ComponentData) {
         console.log(`EmptyComponent is attached to entity "${parent.constructor.name}" ${JSON.stringify(data)}`);
     }
 

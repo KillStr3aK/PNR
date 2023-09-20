@@ -1,9 +1,9 @@
-import { ComponentData, IComponent, IComponentable } from "@SDK/Models";
+import { Entity, ComponentData, IComponent } from "@SDK/Models";
 
 export class PhysicsBodyComponent implements IComponent {
     public Body?: Phaser.Physics.Arcade.Body;
 
-    constructor(parent: IComponentable, data?: ComponentData) {
+    constructor(parent: Entity, data?: ComponentData) {
     }
 
     Destroy(): void {

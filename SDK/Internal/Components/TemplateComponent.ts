@@ -1,7 +1,7 @@
-import { ComponentData, IComponent, IComponentable } from "@SDK/Models";
+import { Entity, ComponentData, IComponent } from "@SDK/Models";
 
 export class TemplateComponent implements IComponent {
-    constructor(parent: IComponentable, data?: ComponentData) {
+    constructor(parent: Entity, data?: ComponentData) {
     }
 
     Destroy(): void {

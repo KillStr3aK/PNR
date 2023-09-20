@@ -1,5 +1,5 @@
-import { ComponentData, IComponent, IComponentable } from "@SDK/Models";
+import { Entity, ComponentData, IComponent, IComponentable } from "@SDK/Models";
 
 export interface IComponentConstructor {
-    new(parent: IComponentable, ...args: ComponentData[]): IComponent;
+    new(parent: Entity, ...args: ComponentData[]): IComponent;
 }
