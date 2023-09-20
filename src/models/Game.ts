@@ -1,4 +1,4 @@
-import * as SDK from "../SDK";
+import * as SDK from "../../SDK";
 
 export class Game extends SDK.BaseGame {
     constructor(config: Phaser.Types.Core.GameConfig) {

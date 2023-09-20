@@ -1,6 +1,6 @@
 import Phaser from 'phaser';
-import Scenes from './scenes';
-import { Game } from './models/Game';
+import Scenes from './Scenes';
+import { Game } from './Models/Game';
 
 const config: Phaser.Types.Core.GameConfig = {
     title: "PNR",

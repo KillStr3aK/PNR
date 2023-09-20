@@ -1,5 +1,5 @@
-import { Entity } from "../../models";
-import { EntityType } from "../../enums";
+import { Entity } from "../../Models";
+import { EntityType } from "../../Enums";
 
 export class WorldEntity extends Entity {
     constructor() {

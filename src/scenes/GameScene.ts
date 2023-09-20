@@ -1,5 +1,5 @@
-import Phaser from 'phaser';
-import { Entity, EntityManager, WorldEntity, WorldPrefab, BaseScene } from '../SDK';
+import Phaser from "phaser";
+import { Entity, EntityManager, WorldEntity, WorldPrefab, BaseScene } from "../../SDK";
 
 const sceneConfig: Phaser.Types.Scenes.SettingsConfig = {
     active: false,
