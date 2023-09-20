@@ -28,7 +28,15 @@ export abstract class Entity extends Instance {
     }
 
     public GetOwner = (): Entity | undefined => {
-        return this.Parent;
+        return this.Owner;
+    }
+
+    public SetParent = (entity: Entity): void => {
+        this.Parent = entity;
+    }
+
+    public SetOwner = (entity: Entity): void => {
+        this.Owner = entity;
     }
 
     public override Destroy(): void {
