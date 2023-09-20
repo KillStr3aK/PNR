@@ -16,7 +16,7 @@ export class GameScene extends BaseScene {
     public init = (): void => {
         let entity: Entity = this.CreateEntityPrefab<WorldEntity>(WorldEntity, WorldPrefab);
 
-        console.log(`Entity UUID: ${entity.GetID()}\nInstance ID: ${entity.GetInstance()} Type: ${entity.GetType()}`);
+        console.log(`Entity UUID: ${entity.GetID()}\nInstance ID: ${entity.GetInstance()}\nType: ${entity.GetType()}`);
     }
 
     public preload = (): void => {
