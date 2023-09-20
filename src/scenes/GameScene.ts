@@ -11,9 +11,9 @@ const sceneConfig: Phaser.Types.Scenes.SettingsConfig = {
 };
 
 export class GameScene extends Phaser.Scene {
-	constructor() {
-		super(sceneConfig)
-	}
+    constructor() {
+        super(sceneConfig)
+    }
 
     public init = (): void => {
         let world1: Entity = EntityManager.CreateEntityPrefab<WorldEntity>(WorldEntity, WorldPrefab);
@@ -21,13 +21,13 @@ export class GameScene extends Phaser.Scene {
         console.log(`Entity UUID: ${world1.GetID()}\nInstance ID: ${world1.GetInstance()}`);
     }
 
-	public preload = (): void => {
+    public preload = (): void => {
 
-	}
+    }
 
-	public create = (): void => {
+    public create = (): void => {
         this.add.text(100, 50, 'GAME SCENE', {
             color: '#FFFFFF',
         }).setFontSize(24);
-	}
+    }
 }
