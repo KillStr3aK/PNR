@@ -1,5 +1,6 @@
 import Phaser from "phaser";
-import { Button, BaseScene } from "../../SDK";
+import { BaseScene } from "@SDK/Internal";
+import { Button } from "@SDK/UI";
 
 const sceneConfig: Phaser.Types.Scenes.SettingsConfig = {
     active: false,
