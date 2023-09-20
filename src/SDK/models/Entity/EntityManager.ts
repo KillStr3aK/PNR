@@ -9,14 +9,14 @@ export type EntityList = InstanceList<Entity>;
 export abstract class EntityManager {
     static Entities: EntityList = new InstanceList<Entity>();
 
-    static CreateEntity<T extends Entity>(EntityCreator: { new(): T; }): Entity {
-        const entity: T = new EntityCreator();
+    static CreateEntity<T extends Entity>(EntityInstance: { new(): T; }): Entity {
+        const entity: T = new EntityInstance();
         EntityManager.Entities.Add(entity);
         return entity;
     }
 
-    static CreateEntityPrefab<T extends Entity>(EntityCreator: { new(): T; }, prefab: Prefab): Entity {
-        const entity: Entity = EntityManager.CreateEntity<T>(EntityCreator);
+    static CreateEntityPrefab<T extends Entity>(EntityInstance: { new(): T; }, prefab: Prefab): Entity {
+        const entity: Entity = EntityManager.CreateEntity<T>(EntityInstance);
 
         PrefabHandler.GetComponentDefinitions(prefab).forEach((prefabComponent: PrefabComponent) => {
             entity.AddComponent(prefabComponent.Component, prefabComponent.Data as ComponentData[]);
