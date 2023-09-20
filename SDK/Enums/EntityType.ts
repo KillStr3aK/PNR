@@ -1,3 +1,4 @@
 export enum EntityType {
-    WORLD = "world"
+    WORLD = "world",
+    DUMMY = "dummy"
 }
