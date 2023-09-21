@@ -22,13 +22,13 @@ export abstract class BaseScene extends Phaser.Scene implements IEntityHandler, 
         return this.scene.key;
     };
 
-    CreateEntity<T extends Entity>(EntityInstance: { new(scene: BaseScene): T; }): Entity {
+    public CreateEntity<T extends Entity>(EntityInstance: { new(scene: BaseScene): T; }): Entity {
         const entity: T = new EntityInstance(this);
         this.Entities.Add(entity);
         return entity;
     }
 
-    CreateEntityPrefab<T extends Entity>(EntityInstance: { new(scene: BaseScene): T; }, prefab: Prefab): Entity {
+    public CreateEntityPrefab<T extends Entity>(EntityInstance: { new(scene: BaseScene): T; }, prefab: Prefab): Entity {
         const entity: Entity = this.CreateEntity<T>(EntityInstance);
 
         PrefabHandler.GetComponentDefinitions(prefab).forEach((prefabComponent: PrefabComponent) => {
@@ -38,11 +38,11 @@ export abstract class BaseScene extends Phaser.Scene implements IEntityHandler, 
         return entity;
     }
 
-    DeleteEntity(entity: Entity): void {
+    public DeleteEntity(entity: Entity): void {
         this.DeleteEntityById(entity.GetInstance());
     }
 
-    DeleteEntityById(instanceId: number): void {
+    public DeleteEntityById(instanceId: number): void {
         if (this.Entities.Contains(instanceId)) {
             let entity: Entity = this.Entities.Get(instanceId);
             entity.Destroy();
@@ -52,11 +52,11 @@ export abstract class BaseScene extends Phaser.Scene implements IEntityHandler, 
         }
     }
 
-    GetEntitiesByType(type: string): Entity[] {
+    public GetEntitiesByType(type: string): Entity[] {
         return this.Entities.Filter(entity => { return entity.GetType() == type; });
     }
 
-    GetEntitiesWithComponent(component: IComponentConstructor): Entity[] {
+    public GetEntitiesWithComponent(component: IComponentConstructor): Entity[] {
         return this.Entities.Filter(entity => { return entity.HasComponent(component); })
     }
 
