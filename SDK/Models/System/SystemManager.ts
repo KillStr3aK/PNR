@@ -29,7 +29,7 @@ export class SystemManager implements IDIsposable, IUpdatable {
     public Update(...args: any[]): void {
         this.Systems.forEach(system => {
             if (system.Update) {
-                system.Update(...args);
+                system.Update(this.Scene, ...args);
             }
         });
     }
