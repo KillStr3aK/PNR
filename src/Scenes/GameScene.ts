@@ -1,6 +1,6 @@
 import Phaser from "phaser";
 import { Entity } from "@SDK/Models";
-import { WorldEntity, WorldPrefab, BaseScene, DummyEntity, DummyPrefab, PhysicsBodyComponent } from "@SDK/Internal";
+import { WorldEntity, WorldPrefab, BaseScene, DummyEntity, DummyPrefab } from "@SDK/Internal";
 
 const sceneConfig: Phaser.Types.Scenes.SettingsConfig = {
     active: false,
@@ -25,7 +25,7 @@ export class GameScene extends BaseScene {
             {
                 clearInterval(interval);
             }
-        }, 1000);
+        }, 300);
     }
 
     public init = (): void => {
