@@ -49,7 +49,7 @@ export abstract class BaseScene extends Phaser.Scene implements IEntityHandler, 
             entity.Destroy();
             this.Entities.Remove(instanceId);
         } else {
-            console.error(`Tried to delete invalid entity ${instanceId}`);
+            throw new Error(`Tried to delete invalid entity ${instanceId}`);
         }
     }
 
