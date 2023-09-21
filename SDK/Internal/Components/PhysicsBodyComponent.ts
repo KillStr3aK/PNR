@@ -48,6 +48,6 @@ export class PhysicsBodyComponent implements IComponent {
     }
 
     Destroy(): void {
-        this.Body?.destroy();
+        this.Body.destroy();
     }
 }
