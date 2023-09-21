@@ -35,6 +35,7 @@ export abstract class BaseScene extends Phaser.Scene implements IEntityHandler, 
             entity.AddComponent(prefabComponent.Component, prefabComponent.Data as ComponentData[]);
         });
 
+        entity.Start();
         return entity;
     }
 
@@ -60,11 +61,23 @@ export abstract class BaseScene extends Phaser.Scene implements IEntityHandler, 
         return this.Entities.Filter(entity => { return entity.HasComponent(component); })
     }
 
+    public GetActiveEntities(): Entity[] {
+        return this.Entities.Filter(entity => { return entity.active; });
+    }
+
     public RegisterEventHandler(name: string | symbol, callback: Function, context?: any): void {
         this.events.on(name, callback, context);
     }
 
     public TriggerEvent(name: string | symbol, ...args: any[]): boolean {
         return this.events.emit(name, ...args);
+    }
+
+    update(time: number, delta: number): void {
+        for (const key in this.Entities)
+        {
+            let entity: Entity = this.Entities[key];
+            entity.Update(time, delta);
+        }
     }
 }
