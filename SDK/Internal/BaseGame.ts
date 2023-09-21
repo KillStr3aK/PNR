@@ -1,10 +1,7 @@
 import Phaser from "phaser";
+import { IEventHandler } from "@SDK/Internal";
 
-export interface IBaseGame {
-    EventHandler: Phaser.Events.EventEmitter;
-}
-
-export abstract class BaseGame extends Phaser.Game implements IBaseGame {
+export abstract class BaseGame extends Phaser.Game implements IEventHandler {
     public EventHandler: Phaser.Events.EventEmitter = new Phaser.Events.EventEmitter();
 
     constructor(config: Phaser.Types.Core.GameConfig) {
