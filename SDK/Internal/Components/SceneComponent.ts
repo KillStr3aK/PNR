@@ -8,6 +8,5 @@ export class TemplateComponent implements IComponent {
         this.Scene = parent.scene as BaseScene;
     }
 
-    Destroy(): void {
-    }
+    Destroy(): void { }
 }
