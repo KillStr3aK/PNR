@@ -69,7 +69,9 @@ export class EntityManager implements IEntityHandler {
 
             entity.Update(time, delta);
             entity.Components.forEach(component => {
-                component.Update(time, delta);
+                if (component.Update) {
+                    component.Update(time, delta);
+                }
             });
         }
     }
