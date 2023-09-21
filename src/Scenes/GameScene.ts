@@ -19,7 +19,7 @@ export class GameScene extends BaseScene {
 
         let interval = setInterval(() => {
             ++num;
-            let dummy: DummyEntity = this.CreateEntityPrefab<DummyEntity>(DummyEntity, DummyPrefab);
+            let dummy: DummyEntity = this.Internal.Entities.CreateEntityPrefab<DummyEntity>(DummyEntity, DummyPrefab);
             console.log(`Dummy UUID: ${dummy.GetID()}\nInstance ID: ${dummy.GetInstance()}\nType: ${dummy.GetType()}`);
 
             if (num % 30 == 0)
@@ -30,7 +30,7 @@ export class GameScene extends BaseScene {
     }
 
     public init = (): void => {
-        this.World = this.CreateEntityPrefab<WorldEntity>(WorldEntity, WorldPrefab);
+        this.World = this.Internal.Entities.CreateEntityPrefab<WorldEntity>(WorldEntity, WorldPrefab);
         this.DummyTest();
     }
 
