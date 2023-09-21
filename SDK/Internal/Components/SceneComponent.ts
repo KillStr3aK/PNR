@@ -7,6 +7,4 @@ export class TemplateComponent implements IComponent {
     constructor(parent: Entity, data?: ComponentData) {
         this.Scene = parent.scene as BaseScene;
     }
-
-    Destroy(): void { }
 }

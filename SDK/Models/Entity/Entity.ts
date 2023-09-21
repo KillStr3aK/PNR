@@ -24,6 +24,18 @@ export abstract class Entity extends Phaser.GameObjects.GameObject implements IE
         this.Components = [];
 
         this.Awake();
+
+        this.scene.events.on(Phaser.Scenes.Events.POST_UPDATE, this.InternalUpdate, this);
+    }
+
+    private InternalUpdate(time: number, delta: number): void {
+        this.Update(time, delta);
+
+        this.Components.forEach(component => {
+            if (component.Update) {
+                component.Update(time, delta);
+            }
+        });
     }
 
     public GetInstance(): number {
@@ -54,6 +66,10 @@ export abstract class Entity extends Phaser.GameObjects.GameObject implements IE
         this.Owner = entity;
     }
 
+    public GetScene(): BaseScene {
+        return this.scene as BaseScene;
+    }
+
     public AddComponent<T extends IComponentConstructor>(componentType: T, ...args: ComponentData[]): void {
         this.Components.push(new componentType(this, ...args));
     }
@@ -76,7 +92,9 @@ export abstract class Entity extends Phaser.GameObjects.GameObject implements IE
 
     public Destroy(): void {
         this.Components.forEach(component => {
-            component.Destroy();
+            if (component.Destroy) {
+                component.Destroy();
+            }
         })
     }
 
