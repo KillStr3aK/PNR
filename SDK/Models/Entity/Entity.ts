@@ -1,10 +1,10 @@
 import { UUIDUtils } from "@SDK/Utils";
 import { BaseScene } from "@SDK/Internal";
-import { InstanceList, IInstance, IComponentable, IComponent, IComponentConstructor, ComponentData } from "@SDK/Models";
+import { IEntityBehaviour, InstanceList, IInstance, IComponentable, IComponent, IComponentConstructor, ComponentData } from "@SDK/Models";
 
 export type EntityList = InstanceList<Entity>;
 
-export abstract class Entity extends Phaser.GameObjects.GameObject implements IInstance, IComponentable {
+export abstract class Entity extends Phaser.GameObjects.GameObject implements IEntityBehaviour, IInstance, IComponentable {
     static Instances: number = 0;
 
     public Instance: number;
@@ -22,6 +22,8 @@ export abstract class Entity extends Phaser.GameObjects.GameObject implements II
         this.ID = UUIDUtils.Generate();
         this.Instance = ++Entity.Instances;
         this.Components = [];
+
+        this.Awake();
     }
 
     public GetInstance(): number {
@@ -76,5 +78,17 @@ export abstract class Entity extends Phaser.GameObjects.GameObject implements II
         this.Components.forEach(component => {
             component.Destroy();
         })
+    }
+
+    public Awake(): void {
+
+    }
+
+    public Start(): void {
+
+    }
+
+    public Update(...args: any[]): void {
+        this.update(...args);
     }
 }
