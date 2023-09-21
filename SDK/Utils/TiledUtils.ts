@@ -1,4 +1,4 @@
-export namespace TiledUtil {
+export namespace TiledUtils {
     export function NormalizeProperties(properties: any): { [key: string]: any } {
         if (Array.isArray(properties)) {
             return properties.reduce((acc: any, propertyMap: any) => {
