@@ -1,5 +1,4 @@
 import Phaser from "phaser";
-import { Entity } from "@SDK/Models";
 import { WorldEntity, WorldPrefab, BaseScene, DummyEntity, DummyPrefab } from "@SDK/Internal";
 
 const sceneConfig: Phaser.Types.Scenes.SettingsConfig = {
@@ -9,6 +8,8 @@ const sceneConfig: Phaser.Types.Scenes.SettingsConfig = {
 };
 
 export class GameScene extends BaseScene {
+    public World!: WorldEntity;
+
     constructor() {
         super(sceneConfig)
     }
@@ -29,9 +30,7 @@ export class GameScene extends BaseScene {
     }
 
     public init = (): void => {
-        let entity: Entity = this.CreateEntityPrefab<WorldEntity>(WorldEntity, WorldPrefab);
-        console.log(`Entity UUID: ${entity.GetID()}\nInstance ID: ${entity.GetInstance()}\nType: ${entity.GetType()}`);
-
+        this.World = this.CreateEntityPrefab<WorldEntity>(WorldEntity, WorldPrefab);
         this.DummyTest();
     }
 
