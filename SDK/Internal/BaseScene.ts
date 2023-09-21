@@ -1,7 +1,10 @@
 import { IEventHandler } from "@SDK/Internal";
+import { InternalPlugin } from "./Plugins/Internal";
 
 export abstract class BaseScene extends Phaser.Scene implements IEventHandler
 {
+    public Internal!: InternalPlugin;
+
     constructor(config: Phaser.Types.Scenes.SettingsConfig)
     {
         super(config);

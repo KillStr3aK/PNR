@@ -5,3 +5,4 @@ export * from "./IEventHandler";
 export * from "./Components";
 export * from "./Entities";
 export * from "./Prefabs";
+export * from "./Plugins";
