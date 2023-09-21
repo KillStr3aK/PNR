@@ -9,7 +9,7 @@ export enum PhysicsBodyType {
 
 export class PhysicsBodyComponent implements IComponent {
     public Body: Phaser.Physics.Arcade.Body;
-    public BodyType: PhysicsBodyType;
+    public readonly BodyType: PhysicsBodyType;
 
     constructor(parent: Entity, data?: ComponentData) {
         this.BodyType = parent.HasComponent(SpriteComponent)
