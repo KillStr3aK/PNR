@@ -8,7 +8,7 @@ export class DummyEntity extends Entity {
     }
 
     public override Start(): void {
-        let physicsBodyComponent: PhysicsBodyComponent = this.GetComponent(PhysicsBodyComponent);
+        let physicsBodyComponent: PhysicsBodyComponent = this.GetComponent<typeof PhysicsBodyComponent>(PhysicsBodyComponent);
         physicsBodyComponent.Body.setVelocity(200, 300);
         physicsBodyComponent.Body.setBounce(1, 1);
     }

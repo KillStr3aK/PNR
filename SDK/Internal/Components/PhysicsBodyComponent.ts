@@ -12,8 +12,8 @@ export class PhysicsBodyComponent implements IComponent {
     public readonly BodyType: PhysicsBodyType;
 
     constructor(parent: Entity, data?: ComponentData) {
-        this.BodyType = parent.HasComponent(SpriteComponent)
-            ? PhysicsBodyType.SPRITE : parent.HasComponent(ImageComponent) ? PhysicsBodyType.IMAGE : PhysicsBodyType.NONE;
+        this.BodyType = parent.HasComponent<typeof SpriteComponent>(SpriteComponent)
+            ? PhysicsBodyType.SPRITE : parent.HasComponent<typeof ImageComponent>(ImageComponent) ? PhysicsBodyType.IMAGE : PhysicsBodyType.NONE;
 
         let object: Phaser.GameObjects.Image | Phaser.GameObjects.Sprite;
 
@@ -21,13 +21,13 @@ export class PhysicsBodyComponent implements IComponent {
         {
             case PhysicsBodyType.IMAGE:
             {
-                object = parent.GetComponent(ImageComponent).Image;
+                object = parent.GetComponent<typeof ImageComponent>(ImageComponent).Image;
                 parent.scene.physics.add.existing(object) as Phaser.Physics.Arcade.Image;
             } break;
 
             case PhysicsBodyType.SPRITE:
             {
-                object = parent.GetComponent(SpriteComponent).Sprite
+                object = parent.GetComponent<typeof SpriteComponent>(SpriteComponent).Sprite
                 parent.scene.physics.add.existing(object) as Phaser.Physics.Arcade.Sprite;
             } break;
 

@@ -32,7 +32,7 @@ export abstract class BaseScene extends Phaser.Scene implements IEntityHandler, 
         const entity: Entity = this.CreateEntity<T>(EntityInstance);
 
         PrefabHandler.GetComponentDefinitions(prefab).forEach((prefabComponent: PrefabComponent) => {
-            entity.AddComponent(prefabComponent.Component, prefabComponent.Data as ComponentData[]);
+            entity.AddComponent<typeof prefabComponent.Component>(prefabComponent.Component, prefabComponent.Data as ComponentData[]);
         });
 
         entity.Start();
