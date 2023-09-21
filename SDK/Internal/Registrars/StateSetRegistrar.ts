@@ -22,3 +22,5 @@ export class StateSetRegistrar extends Registrar<State<any>> {
         return this.Sets[id].map(state => this.GetValue<State<any>>(state));
     }
 }
+
+export const StateSets = new StateSetRegistrar();
