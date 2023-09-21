@@ -1,7 +1,7 @@
 import { BaseScene, BasePlugin } from "@SDK/Internal";
-import { EntityManager, IUpdatable, SystemManager } from "@SDK/Models";
+import { EntityManager, SystemManager } from "@SDK/Models";
 
-export class InternalPlugin extends BasePlugin implements IUpdatable {
+export class InternalPlugin extends BasePlugin {
     public Entities: EntityManager;
     public Systems: SystemManager;
 
@@ -14,32 +14,27 @@ export class InternalPlugin extends BasePlugin implements IUpdatable {
         this.Systems = new SystemManager(scene);
     }
 
-    public start(): void {
+    public override Start(): void {
         this.Systems.Start();
         this.scene.events.on(Phaser.Scenes.Events.POST_UPDATE, this.Update, this);
     }
 
-    public stop(): void {
+    public override Stop(): void {
         this.Systems.Stop();
         this.scene.events.off(Phaser.Scenes.Events.POST_UPDATE, this.Update, this);
     }
 
-    public Update(): void {
+    public override Update(): void {
         this.Systems.Update();
     }
 
-    public destroy(): void {
+    public override Destroy(): void {
         this.Entities.Destroy();
         this.Systems.Destroy();
     }
 
-    public reset(): void {
-        this.stop();
-        this.destroy();
-    }
-
-    public shutdown(): void {
-        this.stop();
-        this.destroy();
+    public override Reset(): void {
+        this.Stop();
+        this.Destroy();
     }
 }
