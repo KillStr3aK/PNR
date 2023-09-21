@@ -11,4 +11,5 @@ export interface IEntityHandler {
     GetEntitiesByType(type: string): Entity[];
     GetEntitiesWithComponent(component: IComponentConstructor): Entity[];
     GetActiveEntities(): Entity[];
+    UpdateEntities(time: number, delta: number): void;
 }

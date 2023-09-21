@@ -65,6 +65,14 @@ export abstract class BaseScene extends Phaser.Scene implements IEntityHandler, 
         return this.Entities.Filter(entity => { return entity.active; });
     }
 
+    public UpdateEntities(time: number, delta: number): void {
+        for (const key in this.Entities)
+        {
+            let entity: Entity = this.Entities[key];
+            entity.Update(time, delta);
+        }
+    }
+
     public RegisterEventHandler(name: string | symbol, callback: Function, context?: any): void {
         this.events.on(name, callback, context);
     }
@@ -74,10 +82,6 @@ export abstract class BaseScene extends Phaser.Scene implements IEntityHandler, 
     }
 
     update(time: number, delta: number): void {
-        for (const key in this.Entities)
-        {
-            let entity: Entity = this.Entities[key];
-            entity.Update(time, delta);
-        }
+        this.UpdateEntities(time, delta);
     }
 }
