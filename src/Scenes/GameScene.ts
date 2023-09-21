@@ -21,9 +21,6 @@ export class GameScene extends BaseScene {
             let dummy: DummyEntity = this.CreateEntityPrefab<DummyEntity>(DummyEntity, DummyPrefab);
             console.log(`Dummy UUID: ${dummy.GetID()}\nInstance ID: ${dummy.GetInstance()}\nType: ${dummy.GetType()}`);
 
-            dummy.GetComponent(PhysicsBodyComponent).Body.setVelocity(200, 300);
-            dummy.GetComponent(PhysicsBodyComponent).Body.setBounce(1, 1);
-
             if (num % 30 == 0)
             {
                 clearInterval(interval);
