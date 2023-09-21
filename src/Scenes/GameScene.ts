@@ -13,13 +13,29 @@ export class GameScene extends BaseScene {
         super(sceneConfig)
     }
 
+    private DummyTest = (): void => {
+        let num: number = 0;
+
+        let interval = setInterval(() => {
+            ++num;
+            let dummy: DummyEntity = this.CreateEntityPrefab<DummyEntity>(DummyEntity, DummyPrefab);
+            console.log(`Dummy UUID: ${dummy.GetID()}\nInstance ID: ${dummy.GetInstance()}\nType: ${dummy.GetType()}`);
+
+            dummy.GetComponent(PhysicsBodyComponent).Body.setVelocity(200, 300);
+            dummy.GetComponent(PhysicsBodyComponent).Body.setBounce(1, 1);
+
+            if (num % 30 == 0)
+            {
+                clearInterval(interval);
+            }
+        }, 1000);
+    }
+
     public init = (): void => {
         let entity: Entity = this.CreateEntityPrefab<WorldEntity>(WorldEntity, WorldPrefab);
         console.log(`Entity UUID: ${entity.GetID()}\nInstance ID: ${entity.GetInstance()}\nType: ${entity.GetType()}`);
 
-        let dummy: DummyEntity = this.CreateEntityPrefab<DummyEntity>(DummyEntity, DummyPrefab);
-        dummy.GetComponent(PhysicsBodyComponent).Body.setVelocity(100, 200);
-        dummy.GetComponent(PhysicsBodyComponent).Body.setBounce(1, 1);
+        this.DummyTest();
     }
 
     public preload = (): void => {

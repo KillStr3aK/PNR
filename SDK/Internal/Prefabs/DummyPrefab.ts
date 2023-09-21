@@ -9,7 +9,8 @@ export const DummyPrefab: Prefab = {
             Data: {
                 X: 400,
                 Y: 100,
-                Texture: "garfield"
+                Texture: "garfield",
+                Scale: 0.25
             }
         },
 
