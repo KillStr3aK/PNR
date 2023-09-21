@@ -10,17 +10,7 @@ export abstract class BaseGame extends Phaser.Game implements IBaseGame, IEventH
 
     constructor(config: Phaser.Types.Core.GameConfig) {
         super(config);
-
-        window.addEventListener("resize", () => {
-            this.TriggerEvent("OnWindowResized");
-        });
-
-        this.RegisterEventHandler("OnWindowResized", this.RefreshScale, this);
     }
-
-    private RefreshScale = (): void => {
-        this.scale.refresh();
-    };
 
     public RegisterEventHandler = (name: string | symbol, callback: Function, context?: any): void => {
         this.EventHandler.on(name, callback, context);
