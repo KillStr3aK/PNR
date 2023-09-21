@@ -1,9 +1,5 @@
 import { Registrar, State } from "@SDK/Models";
-
-export type StateSet = {
-    ID: string;
-    States: State<any>[];
-};
+import { StateSet } from "@SDK/Internal";
 
 export class StateSetRegistrar extends Registrar<State<any>> {
     public Sets: Record<string, string[]> = {};
