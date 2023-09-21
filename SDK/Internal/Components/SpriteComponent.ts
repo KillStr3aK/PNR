@@ -5,7 +5,6 @@ export class SpriteComponent implements IComponent {
 
     constructor(parent: Entity, data: ComponentData) {
         this.Sprite = parent.scene.add.sprite(data.X, data.Y, data.Texture, data.Frame);
-        this.Sprite.y -= this.Sprite.height * this.Sprite.originY;
 
         if (data.Scale) {
             this.Sprite.setScale(data.Scale);
