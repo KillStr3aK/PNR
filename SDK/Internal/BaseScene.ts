@@ -1,6 +1,7 @@
 import { Entity, EntityList, IEntityHandler, PrefabHandler, PrefabComponent, Prefab, InstanceList, IComponentConstructor, ComponentData } from "@SDK/Models";
+import { IEventHandler } from "@SDK/Internal";
 
-export abstract class BaseScene extends Phaser.Scene implements IEntityHandler
+export abstract class BaseScene extends Phaser.Scene implements IEntityHandler, IEventHandler
 {
     public Entities: EntityList = new InstanceList<Entity>();
 
@@ -57,5 +58,13 @@ export abstract class BaseScene extends Phaser.Scene implements IEntityHandler
 
     GetEntitiesWithComponent(component: IComponentConstructor): Entity[] {
         return this.Entities.Filter(entity => { return entity.HasComponent(component); })
+    }
+
+    public RegisterEventHandler(name: string | symbol, callback: Function, context?: any): void {
+        this.events.on(name, callback, context);
+    }
+
+    public TriggerEvent(name: string | symbol, ...args: any[]): boolean {
+        return this.events.emit(name, ...args);
     }
 }
