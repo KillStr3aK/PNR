@@ -80,15 +80,9 @@ export abstract class Entity extends Phaser.GameObjects.GameObject implements IE
         })
     }
 
-    public Awake(): void {
+    public Awake(): void { }
 
-    }
+    public Start(): void { }
 
-    public Start(): void {
-
-    }
-
-    public Update(...args: any[]): void {
-        this.update(...args);
-    }
+    public Update(...args: any[]): void { }
 }
