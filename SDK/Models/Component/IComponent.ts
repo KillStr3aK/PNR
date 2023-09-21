@@ -1,4 +1,5 @@
-export interface IComponent {
+import { IDIsposable } from "@SDK/Models";
+
+export interface IComponent extends IDIsposable {
     [key: string]: any;
-    Destroy(): void;
 }
