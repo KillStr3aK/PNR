@@ -5,8 +5,10 @@ export class InternalPlugin extends BasePlugin implements IUpdatable {
     public Entities: EntityManager;
     public Systems: SystemManager;
 
+    static PluginName: string = "Internal";
+
     constructor(scene: BaseScene, pluginManager: Phaser.Plugins.PluginManager) {
-        super(scene, pluginManager);
+        super(scene, pluginManager, InternalPlugin.PluginName);
 
         this.Entities = new EntityManager(scene);
         this.Systems = new SystemManager(scene);

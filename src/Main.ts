@@ -1,6 +1,7 @@
 import Phaser from "phaser";
 import Scenes from "./Scenes";
 import { Game } from "./Models/Game";
+import { InternalPlugin, ControlsPlugin } from "@SDK/Internal";
 
 const config: Phaser.Types.Core.GameConfig = {
     title: "PNR",
@@ -25,6 +26,17 @@ const config: Phaser.Types.Core.GameConfig = {
     },
 
     scene: Scenes,
+
+    plugins: {
+        global: [
+            // TODO
+        ],
+
+        scene: [
+            { key: "Internal", plugin: InternalPlugin, mapping: InternalPlugin.PluginName },
+            { key: "Controls", plugin: ControlsPlugin, mapping: ControlsPlugin.PluginName }
+        ]
+    },
 };
 
 export default new Game(config);
