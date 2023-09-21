@@ -10,4 +10,5 @@ export interface IEntityHandler {
     DeleteEntityById(instanceId: number): void;
     GetEntitiesByType(type: string): Entity[];
     GetEntitiesWithComponent(component: IComponentConstructor): Entity[];
+    GetActiveEntities(): Entity[];
 }
