@@ -12,7 +12,6 @@ export abstract class Entity extends Phaser.GameObjects.GameObject implements II
     public Components: IComponent[];
 
     private ID: string;
-    private Type: string;
 
     private Parent?: Entity;
     private Owner?: Entity;
@@ -22,7 +21,6 @@ export abstract class Entity extends Phaser.GameObjects.GameObject implements II
 
         this.ID = UUIDUtils.Generate();
         this.Instance = ++Entity.Instances;
-        this.Type = type;
         this.Components = [];
     }
 
@@ -35,7 +33,7 @@ export abstract class Entity extends Phaser.GameObjects.GameObject implements II
     }
 
     public GetType = (): string => {
-        return this.Type;
+        return this.type;
     }
 
     public GetParent = (): Entity | undefined => {
