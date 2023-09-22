@@ -34,7 +34,8 @@ export class PhysicsBodyComponent implements IComponent {
             case PhysicsBodyType.NONE: throw new Error(`PhysicsBodyComponent on parent entity ${parent.GetType()} (${parent.GetInstance()}) requires SpriteComponent or ImageComponent`);
         }
 
-        this.Body = object.body as Phaser.Physics.Arcade.Body;
+        parent.body = object.body as Phaser.Physics.Arcade.Body;
+        this.Body = parent.body;
         this.Body.setSize(object.width, object.height);
         this.Body.updateBounds();
 
