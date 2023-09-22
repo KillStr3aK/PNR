@@ -30,15 +30,13 @@ export const DummyPrefab: Prefab = {
                     const sprites: Phaser.GameObjects.Sprite[] = [];
 
                     entities.forEach(entity => {
-                        console.log(entity.body);
                         sprites.push(entity.GetComponent<typeof SpriteComponent>(SpriteComponent).Sprite);
                     });
 
                     return sprites;
                 },
 
-                OnCollide: () => { console.log("collide"); },
-                OnProcess: () => { console.log("process"); return true; }
+                OnProcess: () => { return true; }
             }
         }
     ]
