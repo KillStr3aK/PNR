@@ -4,3 +4,4 @@ export * from "./SpriteComponent";
 export * from "./ImageComponent";
 export * from "./SceneComponent";
 export * from "./StateMachineComponent";
+export * from "./ColliderComponent";
