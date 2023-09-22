@@ -4,7 +4,7 @@ export class SpriteComponent implements IComponent {
     public Sprite: Phaser.GameObjects.Sprite;
 
     constructor(parent: Entity, data: ComponentData) {
-        this.Sprite = parent.scene.add.sprite(data.X, data.Y, data.Texture, data.Frame);
+        this.Sprite = parent.scene.add.sprite(data.X ?? 0, data.Y ?? 0, data.Texture, data.Frame);
 
         if (data.Scale) {
             this.Sprite.setScale(data.Scale);
