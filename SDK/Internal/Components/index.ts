@@ -6,3 +6,4 @@ export * from "./SceneComponent";
 export * from "./StateMachineComponent";
 export * from "./ColliderComponent";
 export * from "./CameraComponent";
+export * from "./AnimationComponent";
