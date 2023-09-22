@@ -44,20 +44,6 @@ export class GameScene extends BaseScene {
             color: "#FFFFFF",
         }).setFontSize(24);
 
-        this.anims.create({
-            key: "dummy-idle",
-            frames: this.anims.generateFrameNumbers("dummy", { start: 0, end: 15 }),
-            frameRate: 10,
-            repeat: -1
-        });
-
-        this.anims.create({
-            key: "dummy-idle-blink",
-            frames: this.anims.generateFrameNumbers("dummy-blink", { start: 0, end: 15 }),
-            frameRate: 10,
-            repeat: -1
-        });
-
         this.World = this.Internal.Entities.CreateEntityPrefab<WorldEntity>(WorldEntity, WorldPrefab);
         this.DummyTest();
     }

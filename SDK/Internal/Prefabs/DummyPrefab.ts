@@ -1,6 +1,6 @@
 import { Entity, Prefab } from "@SDK/Models";
 import { EntityType } from "@SDK/Enums";
-import { PhysicsBodyComponent, StateMachineComponent, ColliderComponent, SpriteComponent, ColliderObjectType, BaseScene } from "@SDK/Internal";
+import { PhysicsBodyComponent, StateMachineComponent, ColliderComponent, SpriteComponent, ColliderObjectType, BaseScene, AnimationComponent } from "@SDK/Internal";
 
 export const DummyPrefab: Prefab = {
     Name: "dummy_prefab",
@@ -12,6 +12,27 @@ export const DummyPrefab: Prefab = {
                 Y: 100,
                 Texture: "dummy",
                 Scale: 0.25
+            }
+        },
+
+        {
+            Component: AnimationComponent,
+            Data: {
+                Animations: [
+                    {
+                        key: "dummy-idle",
+                        frames: (sprite: Phaser.GameObjects.Sprite) => { return sprite.anims.generateFrameNumbers("dummy", { start: 0, end: 15 }) },
+                        frameRate: 12,
+                        repeat: -1
+                    },
+
+                    {
+                        key: "dummy-idle-blink",
+                        frames: (sprite: Phaser.GameObjects.Sprite) => { return sprite.anims.generateFrameNumbers("dummy-blink", { start: 0, end: 15 }) },
+                        frameRate: 12,
+                        repeat: -1
+                    }
+                ]
             }
         },
 
