@@ -26,14 +26,7 @@ export const DummyPrefab: Prefab = {
             Component: ColliderComponent,
             Data: {
                 Objects: (scene: BaseScene): ColliderObjectType => {
-                    const entities: Entity[] = scene.Internal.Entities.GetEntities(EntityType.DUMMY);
-                    const sprites: Phaser.GameObjects.Sprite[] = [];
-
-                    entities.forEach(entity => {
-                        sprites.push(entity.GetComponent<typeof SpriteComponent>(SpriteComponent).Sprite);
-                    });
-
-                    return sprites;
+                    return scene.Internal.Entities.GetEntities(EntityType.DUMMY);
                 },
 
                 OnProcess: () => { return true; }
