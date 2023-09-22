@@ -1,7 +1,10 @@
+import { BaseScene } from "@SDK/Internal";
 import { Entity, ComponentData, IComponent } from "@SDK/Models";
 
-export type ColliderData = {
-    Objects: ((() => Phaser.GameObjects.GameObject[]) | Phaser.GameObjects.GameObject[] | Phaser.GameObjects.GameObject | Phaser.GameObjects.Group | Phaser.GameObjects.Group[]);
+export type ColliderObjectType = Phaser.GameObjects.GameObject[] | Phaser.GameObjects.GameObject | Phaser.GameObjects.Group | Phaser.GameObjects.Group[];
+
+export type ColliderComponentData = {
+    Objects: ((scene: BaseScene) => ColliderObjectType);
     OnCollide?: ArcadePhysicsCallback;
     OnProcess?: ArcadePhysicsCallback;
 };
@@ -13,11 +16,9 @@ export class ColliderComponent implements IComponent {
         this.Parent = parent;
 
         if (data.Objects) {
-            if (typeof data.Objects === "function") {
-                parent.scene.physics.add.collider(parent, data.Objects(), data.OnCollide ?? undefined, data.OnProcess ?? undefined, this);
-            } else {
-                throw new Error(`COLLIDER2D::INVALID::OBJECTS_${data.Objects}`);
-            }
+            parent.scene.physics.add.collider(parent, data.Objects(parent.scene as BaseScene), data.OnCollide, data.OnProcess, this);
+        } else {
+            throw new Error(`COLLIDER2D::INVALID::OBJECTS_${data.Objects}`);
         }
     }
 }
