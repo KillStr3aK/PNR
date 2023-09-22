@@ -9,6 +9,7 @@ const sceneConfig: Phaser.Types.Scenes.SettingsConfig = {
 
 export class GameScene extends BaseScene {
     public World!: WorldEntity;
+    public Label!: Phaser.GameObjects.Text;
 
     constructor() {
         super(sceneConfig)
@@ -22,7 +23,7 @@ export class GameScene extends BaseScene {
             let dummy: DummyEntity = this.Internal.Entities.CreateEntityPrefab<DummyEntity>(DummyEntity, DummyPrefab);
             console.log(`Dummy UUID: ${dummy.GetID()}\nInstance ID: ${dummy.GetInstance()}\nType: ${dummy.GetType()}`);
 
-            if (num % 2 == 0)
+            if (num % 1 == 0)
             {
                 clearInterval(interval);
             }
@@ -30,17 +31,38 @@ export class GameScene extends BaseScene {
     }
 
     public init = (): void => {
+    }
+
+    public preload = (): void => {
+        // this.load.image("garfield", "images/9fb5a15e7f8f744375fb7bcd3a2cddaa.jpg");
+        this.load.spritesheet("dummy", "animations/dummy/dummy-idle.png", {frameWidth: 900, frameHeight: 900});
+        this.load.spritesheet("dummy-blink", "animations/dummy/dummy-idle-blink.png", {frameWidth: 900, frameHeight: 900});
+    }
+
+    public create = (): void => {
+        this.Label = this.add.text(100, 50, "GAME SCENE", {
+            color: "#FFFFFF",
+        }).setFontSize(24);
+
+        this.anims.create({
+            key: "dummy-idle",
+            frames: this.anims.generateFrameNumbers("dummy", { start: 0, end: 15 }),
+            frameRate: 10,
+            repeat: -1
+        });
+
+        this.anims.create({
+            key: "dummy-idle-blink",
+            frames: this.anims.generateFrameNumbers("dummy-blink", { start: 0, end: 15 }),
+            frameRate: 10,
+            repeat: -1
+        });
+
         this.World = this.Internal.Entities.CreateEntityPrefab<WorldEntity>(WorldEntity, WorldPrefab);
         this.DummyTest();
     }
 
-    public preload = (): void => {
-        this.load.image("garfield", "images/9fb5a15e7f8f744375fb7bcd3a2cddaa.jpg");
-    }
-
-    public create = (): void => {
-        this.add.text(100, 50, "GAME SCENE", {
-            color: "#FFFFFF",
-        }).setFontSize(24);
+    update(time: number, delta: number): void {
+        this.Label.text = `GAME SCENE (${this.GetCurrentFPS()})`;
     }
 }

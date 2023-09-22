@@ -1,6 +1,6 @@
 import { Entity, Prefab } from "@SDK/Models";
 import { EntityType } from "@SDK/Enums";
-import { PhysicsBodyComponent, ColliderComponent, ColliderObjectType, BaseScene, SpriteComponent } from "@SDK/Internal";
+import { PhysicsBodyComponent, StateMachineComponent, ColliderComponent, SpriteComponent, ColliderObjectType, BaseScene } from "@SDK/Internal";
 
 export const DummyPrefab: Prefab = {
     Name: "dummy_prefab",
@@ -10,7 +10,7 @@ export const DummyPrefab: Prefab = {
             Data: {
                 X: 400,
                 Y: 100,
-                Texture: "garfield",
+                Texture: "dummy",
                 Scale: 0.25
             }
         },
@@ -30,6 +30,14 @@ export const DummyPrefab: Prefab = {
                 },
 
                 OnProcess: () => { return true; }
+            }
+        },
+
+        {
+            Component: StateMachineComponent,
+            Data: {
+                StateSet: "dummy",
+                InitialStateId: "dummy-idle"
             }
         }
     ]
