@@ -14,7 +14,7 @@ export class ColliderComponent implements IComponent {
 
         if (data.Objects) {
             if (typeof data.Objects === "function") {
-                parent.scene.physics.add.collider(parent, data.Objects(), data.OnCollide ?? undefined, data.OnProcess ?? undefined);
+                parent.scene.physics.add.collider(parent, data.Objects(), data.OnCollide ?? undefined, data.OnProcess ?? undefined, this);
             } else {
                 throw new Error(`COLLIDER2D::INVALID::OBJECTS_${data.Objects}`);
             }
