@@ -1,4 +1,4 @@
-import { Entity, ComponentData, IComponent, StateMachine, State, TransitionType } from "@SDK/Models";
+import { Entity, ComponentData, IComponent, StateMachine, TransitionType } from "@SDK/Models";
 import { StateSetRegistrar } from "@SDK/Internal";
 
 export class StateMachineComponent implements IComponent {
