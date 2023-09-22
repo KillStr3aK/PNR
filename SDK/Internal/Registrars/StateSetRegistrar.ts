@@ -1,26 +1,37 @@
-import { Registrar, State } from "@SDK/Models";
+import { State } from "@SDK/Models";
+import { DummyStateSet } from "@SDK/Internal";
 
 export type StateSet = {
     ID: string;
     States: State<any>[];
 };
 
-export class StateSetRegistrar extends Registrar<State<any>> {
-    public Sets: Record<string, string[]> = {};
+const States: Record<string, State<any>> = {};
+const Sets: Record<string, string[]> = {};
 
-    public RegisterSets(sets: StateSet[]): void {
-        sets.forEach(set => {
-            set.States.forEach(state => {
-                this.SetValue(state.ID, state);
-            });
-
-            this.Sets[set.ID] = set.States.map(state => state.ID);
+function RegisterSets(sets: StateSet[]): void {
+    sets.forEach(set => {
+        set.States.forEach(state => {
+            States[state.ID] = state;
         });
-    }
 
-    public GetSet(id: string): State<any>[] {
-        return this.Sets[id].map(state => this.GetValue<State<any>>(state));
-    }
+        Sets[set.ID] = set.States.map(state => state.ID);
+    });
 }
 
-export const StateSets = new StateSetRegistrar();
+function GetState(id: string): State<any> {
+    return States[id];
+}
+
+function GetSet(id: string): State<any>[] {
+    return Sets[id].map(stateId => States[stateId]);
+}
+
+RegisterSets([
+    DummyStateSet
+]);
+
+export const StateSetRegistrar = {
+    GetState,
+    GetSet
+}
