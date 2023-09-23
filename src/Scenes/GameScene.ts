@@ -42,7 +42,7 @@ export class GameScene extends BaseScene {
 
         let interval = setInterval(() => {
             ++num;
-            let dummy: DummyEntity = this.Internal.Entities.CreateEntityPrefab<DummyEntity>(DummyEntity, DummyPrefab);
+            this.Internal.Entities.CreateEntityPrefab<DummyEntity>(DummyEntity, DummyPrefab);
 
             if (num % 10 == 0)
             {
