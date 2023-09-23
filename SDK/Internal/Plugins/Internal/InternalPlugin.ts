@@ -16,12 +16,12 @@ export class InternalPlugin extends BasePlugin {
 
     public override Start(): void {
         this.Systems.Start();
-        this.scene.events.on(Phaser.Scenes.Events.POST_UPDATE, this.Update, this);
+        this.scene!.events.on(Phaser.Scenes.Events.POST_UPDATE, this.Update, this);
     }
 
     public override Stop(): void {
         this.Systems.Stop();
-        this.scene.events.off(Phaser.Scenes.Events.POST_UPDATE, this.Update, this);
+        this.scene!.events.off(Phaser.Scenes.Events.POST_UPDATE, this.Update, this);
     }
 
     public override Update(): void {

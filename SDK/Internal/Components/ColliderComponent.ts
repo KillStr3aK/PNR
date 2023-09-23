@@ -5,8 +5,8 @@ export type ColliderObjectType = Phaser.GameObjects.GameObject[] | Phaser.GameOb
 
 export type ColliderComponentData = {
     Objects: ((scene: BaseScene) => ColliderObjectType);
-    OnCollide?: ArcadePhysicsCallback;
-    OnProcess?: ArcadePhysicsCallback;
+    OnCollide?: Phaser.Types.Physics.Arcade.ArcadePhysicsCallback;
+    OnProcess?: Phaser.Types.Physics.Arcade.ArcadePhysicsCallback;
 };
 
 export class ColliderComponent implements IComponent {
