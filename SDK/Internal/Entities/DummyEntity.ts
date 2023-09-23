@@ -47,5 +47,7 @@ export class DummyEntity extends Entity {
         let physicsBodyComponent: PhysicsBodyComponent = this.GetComponent<typeof PhysicsBodyComponent>(PhysicsBodyComponent);
         physicsBodyComponent.Body.setVelocity(200, 300);
         physicsBodyComponent.Body.setBounce(1, 1);
+
+        this.GetComponent<typeof SpriteComponent>(SpriteComponent).Sprite.tint = Math.random() * 1600000000;
     }
 }
