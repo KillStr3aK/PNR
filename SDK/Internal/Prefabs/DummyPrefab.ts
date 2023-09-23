@@ -11,7 +11,7 @@ export const DummyPrefab: Prefab = {
                 X: 400,
                 Y: 100,
                 Texture: "dummy",
-                Scale: 0.2
+                Scale: 0.5
             }
         },
 
@@ -40,10 +40,12 @@ export const DummyPrefab: Prefab = {
             Component: PhysicsBodyComponent,
             Data: {
                 Width: 340,
-                Height: 600,
+                Height: 500,
                 CollideWithWorldBounds: true,
                 MaxVelocityX: 400,
-                MaxVelocityY: 600
+                MaxVelocityY: 600,
+                OffsetX: 0,
+                OffsetY: 250
             }
         },
 
