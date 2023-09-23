@@ -11,7 +11,7 @@ export const DummyPrefab: Prefab = {
                 X: 400,
                 Y: 100,
                 Texture: "dummy",
-                Scale: 0.5
+                Scale: 0.2
             }
         },
 
