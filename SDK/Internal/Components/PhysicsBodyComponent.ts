@@ -11,7 +11,7 @@ export class PhysicsBodyComponent implements IComponent {
     public Body: Phaser.Physics.Arcade.Body;
     public readonly BodyType: PhysicsBodyType;
 
-    constructor(parent: Entity, data?: ComponentData) {
+    constructor(parent: Entity, data: ComponentData) {
         this.BodyType = parent.HasComponent<typeof SpriteComponent>(SpriteComponent)
             ? PhysicsBodyType.SPRITE : parent.HasComponent<typeof ImageComponent>(ImageComponent) ? PhysicsBodyType.IMAGE : PhysicsBodyType.NONE;
 
@@ -35,14 +35,18 @@ export class PhysicsBodyComponent implements IComponent {
         }
 
         this.Body = parent.body = object.body as Phaser.Physics.Arcade.Body;
-        this.Body.setSize(object.width, object.height);
+        this.Body.setSize(data.Width ?? object.width, data.Height ?? object.height, data.Center ?? true);
         this.Body.updateBounds();
 
-        if (data?.MaxVelocityX) {
+        if (data.MaxVelocityX) {
             this.Body.maxVelocity.x = data.MaxVelocityX;
         }
 
-        if (data?.CollideWithWorldBounds) {
+        if (data.MaxVelocityY) {
+            this.Body.maxVelocity.y = data.MaxVelocityY;
+        }
+
+        if (data.CollideWithWorldBounds) {
             this.Body.collideWorldBounds = true;
         }
     }
