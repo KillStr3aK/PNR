@@ -39,7 +39,11 @@ export const DummyPrefab: Prefab = {
         {
             Component: PhysicsBodyComponent,
             Data: {
-                CollideWithWorldBounds: true
+                Width: 340,
+                Height: 600,
+                CollideWithWorldBounds: true,
+                MaxVelocityX: 400,
+                MaxVelocityY: 600
             }
         },
 

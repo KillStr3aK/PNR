@@ -23,11 +23,11 @@ export class GameScene extends BaseScene {
             let dummy: DummyEntity = this.Internal.Entities.CreateEntityPrefab<DummyEntity>(DummyEntity, DummyPrefab);
             console.log(`Dummy UUID: ${dummy.GetID()}\nInstance ID: ${dummy.GetInstance()}\nType: ${dummy.GetType()}`);
 
-            if (num % 2 == 0)
+            if (num % 10 == 0)
             {
                 clearInterval(interval);
             }
-        }, 300);
+        }, 500);
     }
 
     public init = (): void => {
