@@ -15,21 +15,6 @@ export class GameScene extends BaseScene {
         super(sceneConfig)
     }
 
-    private DummyTest = (): void => {
-        let num: number = 0;
-
-        let interval = setInterval(() => {
-            ++num;
-            let dummy: DummyEntity = this.Internal.Entities.CreateEntityPrefab<DummyEntity>(DummyEntity, DummyPrefab);
-            console.log(`Dummy UUID: ${dummy.GetID()}\nInstance ID: ${dummy.GetInstance()}\nType: ${dummy.GetType()}`);
-
-            if (num % 10 == 0)
-            {
-                clearInterval(interval);
-            }
-        }, 500);
-    }
-
     public init = (): void => {
     }
 
@@ -50,5 +35,19 @@ export class GameScene extends BaseScene {
 
     update(time: number, delta: number): void {
         this.Label.text = `GAME SCENE (${this.GetCurrentFPS()})`;
+    }
+
+    private DummyTest = (): void => {
+        let num: number = 0;
+
+        let interval = setInterval(() => {
+            ++num;
+            let dummy: DummyEntity = this.Internal.Entities.CreateEntityPrefab<DummyEntity>(DummyEntity, DummyPrefab);
+
+            if (num % 10 == 0)
+            {
+                clearInterval(interval);
+            }
+        }, 500);
     }
 }

@@ -40,6 +40,7 @@ export const DummyStateSet: StateSet = {
 export class DummyEntity extends Entity {
     constructor(scene: BaseScene) {
         super(scene, EntityType.DUMMY);
+        console.log(`DummyEntity\nUUID: ${this.GetID()}\nInstance ID: ${this.GetInstance()}\nType: ${this.GetType()}`);
     }
 
     public override Start(): void {
