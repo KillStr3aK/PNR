@@ -38,6 +38,14 @@ export class PhysicsBodyComponent implements IComponent {
         this.Body.setSize(data.Width ?? object.width, data.Height ?? object.height, data.Center ?? true);
         this.Body.updateBounds();
 
+        if (data.OffsetX) {
+            this.Body.offset.x = data.OffsetX;
+        }
+
+        if (data.OffsetY) {
+            this.Body.offset.y = data.OffsetY;
+        }
+
         if (data.MaxVelocityX) {
             this.Body.maxVelocity.x = data.MaxVelocityX;
         }
