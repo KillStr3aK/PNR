@@ -22,6 +22,6 @@
         "@SDK/*": ["../SDK/*"]
     }
   },
-  "include": ["src", "SDK"],
+  "include": ["src", "SDK", "test"],
   "types": ["node"]
 }
