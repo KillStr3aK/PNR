@@ -20,8 +20,8 @@ export class GameScene extends BaseScene {
 
     public preload = (): void => {
         // this.load.image("garfield", "images/9fb5a15e7f8f744375fb7bcd3a2cddaa.jpg");
-        this.load.spritesheet("dummy", "animations/dummy/dummy-idle.png", {frameWidth: 900, frameHeight: 900});
-        this.load.spritesheet("dummy-blink", "animations/dummy/dummy-idle-blink.png", {frameWidth: 900, frameHeight: 900});
+        this.load.spritesheet("dummy", "assets/animations/dummy/dummy-idle.png", {frameWidth: 900, frameHeight: 900});
+        this.load.spritesheet("dummy-blink", "assets/animations/dummy/dummy-idle-blink.png", {frameWidth: 900, frameHeight: 900});
     }
 
     public create = (): void => {
