@@ -44,7 +44,7 @@ export class GameScene extends BaseScene {
             ++num;
             this.Internal.Entities.CreateEntityPrefab<DummyEntity>(DummyEntity, DummyPrefab);
 
-            if (num % 10 == 0)
+            if (num % 1 == 0)
             {
                 clearInterval(interval);
             }
