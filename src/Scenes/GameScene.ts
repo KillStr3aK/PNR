@@ -34,7 +34,7 @@ export class GameScene extends BaseScene {
     }
 
     update(time: number, delta: number): void {
-        this.Label.text = `GAME SCENE [${this.GetHeight()}x${this.GetWidth()}] (${this.GetCurrentFPS().toFixed(2)} FPS | ${delta.toFixed(3)} ms)`;
+        this.Label.text = `GAME SCENE [${this.GetWidth()}x${this.GetHeight()}] (${this.GetCurrentFPS().toFixed(2)} FPS | ${delta.toFixed(3)} ms)`;
     }
 
     private DummyTest = (): void => {
