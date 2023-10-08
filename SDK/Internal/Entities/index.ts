@@ -1,2 +1,2 @@
-export * from "./WorldEntity";
-export * from "./DummyEntity";
+export * from "./World";
+export * from "./Dummy";
