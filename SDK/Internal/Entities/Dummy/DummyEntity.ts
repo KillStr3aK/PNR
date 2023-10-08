@@ -1,10 +1,11 @@
 import { Entity } from "@SDK/Models";
 import { EntityType } from "@SDK/Enums";
-import { BaseScene, PhysicsBodyComponent, StateSet, DummyIdle, DummyIdleBlink } from "@SDK/Internal";
+import { BaseScene, PhysicsBodyComponent, StateSet } from "@SDK/Internal";
+import DummyStates from "./States";
 
 export const DummyStateSet: StateSet = {
     ID: "dummy",
-    States: [DummyIdle, DummyIdleBlink]
+    States: DummyStates
 };
 
 export class DummyEntity extends Entity {
