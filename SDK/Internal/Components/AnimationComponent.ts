@@ -30,7 +30,12 @@ export class AnimationComponent implements IComponent {
         });
     }
 
-    Destroy(): void {
+    public Play(key: string | Phaser.Animations.Animation | Phaser.Types.Animations.PlayAnimationConfig, ignoreIfPlaying?: boolean | undefined): Phaser.GameObjects.GameObject
+    {
+        return this.Sprite.anims.play(key, ignoreIfPlaying);
+    }
+
+    public Destroy(): void {
         this.Animations.forEach(animation => {
             this.Sprite.anims.remove(animation.key);
         });
