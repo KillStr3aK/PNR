@@ -1,3 +1,3 @@
-export interface IDIsposable {
+export interface IDisposable {
     Destroy?(): void;
 }

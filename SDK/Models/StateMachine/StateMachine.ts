@@ -1,7 +1,7 @@
 import { BaseScene } from "@SDK/Internal";
-import { IStateMachine, State, Transition, ConditionalTransitionTrigger, ConditionalTransition, TimerTransition, TimerTransitionTrigger, TransitionCanceler, TransitionType, IObjectState, IUpdatable, IDIsposable } from "@SDK/Models";
+import { IStateMachine, State, Transition, ConditionalTransitionTrigger, ConditionalTransition, TimerTransition, TimerTransitionTrigger, TransitionCanceler, TransitionType, IObjectState, IUpdatable, IDisposable } from "@SDK/Models";
 
-export class StateMachine<T> implements IStateMachine<T>, IObjectState, IUpdatable, IDIsposable {
+export class StateMachine<T> implements IStateMachine<T>, IObjectState, IUpdatable, IDisposable {
     public Enabled: boolean;
     public Scene: BaseScene;
     public Entity: T;

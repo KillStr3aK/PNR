@@ -1,7 +1,7 @@
 import { BaseScene } from "@SDK/Internal";
-import { IUpdatable, IDIsposable } from "@SDK/Models";
+import { IUpdatable, IDisposable } from "@SDK/Models";
 
-export abstract class BasePlugin extends Phaser.Plugins.ScenePlugin implements IUpdatable, IDIsposable {
+export abstract class BasePlugin extends Phaser.Plugins.ScenePlugin implements IUpdatable, IDisposable {
     constructor(scene: BaseScene, pluginManager: Phaser.Plugins.PluginManager, pluginKey: string) {
         super(scene, pluginManager, pluginKey);
     }

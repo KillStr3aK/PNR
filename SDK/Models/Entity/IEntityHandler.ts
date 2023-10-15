@@ -1,7 +1,7 @@
 import { BaseScene } from "@SDK/Internal";
-import { Entity, EntityIdentifier, EntityList, Prefab, IComponentConstructor, IDIsposable } from "@SDK/Models";
+import { Entity, EntityIdentifier, EntityList, Prefab, IComponentConstructor, IDisposable } from "@SDK/Models";
 
-export interface IEntityHandler extends IDIsposable {
+export interface IEntityHandler extends IDisposable {
     Entities: EntityList;
 
     CreateEntity<T extends Entity>(EntityInstance: { new(scene: BaseScene): T; }): Entity;

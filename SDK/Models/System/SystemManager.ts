@@ -1,7 +1,7 @@
 import { BaseScene } from "@SDK/Internal";
-import { ISystem, ISystemConstructor, IDIsposable, IUpdatable} from "@SDK/Models";
+import { ISystem, ISystemConstructor, IDisposable, IUpdatable} from "@SDK/Models";
 
-export class SystemManager implements IDIsposable, IUpdatable {
+export class SystemManager implements IDisposable, IUpdatable {
     private Scene: BaseScene;
     private Systems: ISystem[];
 

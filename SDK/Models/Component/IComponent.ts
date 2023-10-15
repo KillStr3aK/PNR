@@ -1,5 +1,5 @@
-import { IDIsposable, IUpdatable } from "@SDK/Models";
+import { IDisposable, IUpdatable } from "@SDK/Models";
 
-export interface IComponent extends IDIsposable, IUpdatable {
+export interface IComponent extends IDisposable, IUpdatable {
     [key: string]: any;
 }
