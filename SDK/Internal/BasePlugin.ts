@@ -4,6 +4,8 @@ import { IUpdatable, IDisposable } from "@SDK/Models";
 export abstract class BasePlugin extends Phaser.Plugins.ScenePlugin implements IUpdatable, IDisposable {
     constructor(scene: BaseScene, pluginManager: Phaser.Plugins.PluginManager, pluginKey: string) {
         super(scene, pluginManager, pluginKey);
+
+        this.scene!.events.on(Phaser.Scenes.Events.POST_UPDATE, this.Update, this);
     }
 
     public start(): void {
@@ -11,6 +13,7 @@ export abstract class BasePlugin extends Phaser.Plugins.ScenePlugin implements I
     }
 
     public stop(): void {
+        this.scene!.events.off(Phaser.Scenes.Events.POST_UPDATE, this.Update, this);
         this.Stop();
     }
 
